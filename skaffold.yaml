@@ -1,0 +1,15 @@
+apiVersion: skaffold/v4beta8
+kind: Config
+metadata:
+  name: crm-base-service
+build:
+  artifacts:
+    - image: crm-base-service
+      docker:
+        dockerfile: Dockerfile
+manifests:
+  rawYaml:
+    - k8s/app/*.yaml
+    - k8s/kafka/*.yaml
+    - k8s/zookeeper/*.yaml
+

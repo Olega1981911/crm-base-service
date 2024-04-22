@@ -1,0 +1,18 @@
+schema {
+    query: Query
+}
+type Query {
+    client(id: Long!): Client
+    clients: [Client]
+}
+#input
+scalar Long
+
+type Client {
+    #type
+    id: Long
+    clientName: String
+    address: String
+    payerAccountNumber: String
+    bankDetails: String
+}
